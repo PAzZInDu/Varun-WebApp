@@ -2,7 +2,7 @@ import streamlit as st
 import authlib
 #from app import chat
 
-IMAGE_ADDRESS = "https://europe.ippf.org/sites/europe/files/styles/header_background_xs/public/2022-12/illustration-14-website-no-logos-no-text.jpg?itok=y-vJsgkS"
+IMAGE_ADDRESS = "https://img.goodfon.com/original/1920x1080/8/71/fireman-fire-man.jpg"
 
 # title
 st.title("Demo_Google_Log")
