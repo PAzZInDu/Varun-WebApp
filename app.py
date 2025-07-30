@@ -59,31 +59,31 @@ classification_model = load_sklearn_models("best_ml_model")
 
 
 # web app
+def run_app(): 
+    # title
+    st.title("Wild Fire Classification")
+    # image
+    st.image(IMG_ADDRESS, caption = "Wild Fire Classification - Sattelite Images")
 
-# title
-st.title("Wild Fire Classification")
-# image
-st.image(IMG_ADDRESS, caption = "Wild Fire Classification - Sattelite Images")
+    # input image
+    st.subheader("Please Upload a Sattelite Image")
 
-# input image
-st.subheader("Please Upload a Sattelite Image")
+    # file uploader
+    image = st.file_uploader("Please Upload a Sattelite Image", type = ["jpg", "png", "jpeg"], accept_multiple_files = False, help = "Upload an Image")
 
-# file uploader
-image = st.file_uploader("Please Upload a Sattelite Image", type = ["jpg", "png", "jpeg"], accept_multiple_files = False, help = "Upload an Image")
+    if image:
+        user_image = Image.open(image)
+        # save the image to set the path
+        user_image.save(IMAGE_NAME)
+        # set the user image
+        st.image(user_image, caption = "User Uploaded Image")
 
-if image:
-    user_image = Image.open(image)
-    # save the image to set the path
-    user_image.save(IMAGE_NAME)
-    # set the user image
-    st.image(user_image, caption = "User Uploaded Image")
-
-    #get the features
-    with st.spinner("Processing......."):
-        image_features = featurization(IMAGE_NAME, MobileNetV2_featurized_model)
-        model_predict = classification_model.predict(image_features)
-        result_label = CLASS_LABEL[model_predict[0]]
-        st.success(f"Prediction: {result_label}")
+        #get the features
+        with st.spinner("Processing......."):
+            image_features = featurization(IMAGE_NAME, MobileNetV2_featurized_model)
+            model_predict = classification_model.predict(image_features)
+            result_label = CLASS_LABEL[model_predict[0]]
+            st.success(f"Prediction: {result_label}")
         
 
     

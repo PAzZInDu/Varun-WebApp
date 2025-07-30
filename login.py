@@ -19,3 +19,5 @@ else:
     if st.sidebar.button("Log out", type="secondary", icon=":material/logout:"):
         st.logout()
     #chat()
+
+    run_app()
