@@ -84,6 +84,3 @@ def run_app():
             model_predict = classification_model.predict(image_features)
             result_label = CLASS_LABEL[model_predict[0]]
             st.success(f"Prediction: {result_label}")
-        
-
-    
