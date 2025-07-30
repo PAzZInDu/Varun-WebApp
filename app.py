@@ -59,19 +59,19 @@ classification_model = load_sklearn_models("best_ml_model")
 
 
 # web app
-def run_app(): 
-    # title
-    st.title("Wild Fire Classification")
-    # image
-    st.image(IMG_ADDRESS, caption = "Wild Fire Classification - Sattelite Images")
 
-    # input image
-    st.subheader("Please Upload a Sattelite Image")
+# title
+st.title("Wild Fire Classification")
+# image
+st.image(IMG_ADDRESS, caption = "Wild Fire Classification - Sattelite Images")
 
-    # file uploader
-    image = st.file_uploader("Please Upload a Sattelite Image", type = ["jpg", "png", "jpeg"], accept_multiple_files = False, help = "Upload an Image")
+# input image
+st.subheader("Please Upload a Sattelite Image")
 
-    if image:
+# file uploader
+image = st.file_uploader("Please Upload a Sattelite Image", type = ["jpg", "png", "jpeg"], accept_multiple_files = False, help = "Upload an Image")
+
+if image:
         user_image = Image.open(image)
         # save the image to set the path
         user_image.save(IMAGE_NAME)
