@@ -1,5 +1,7 @@
 import streamlit as st
 import authlib
+from app import run_app
+
 #from app import chat
 
 IMAGE_ADDRESS = "https://img.goodfon.com/original/1920x1080/8/71/fireman-fire-man.jpg"
