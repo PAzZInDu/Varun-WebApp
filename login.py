@@ -7,12 +7,14 @@ from app import run_app
 IMAGE_ADDRESS = "https://img.goodfon.com/original/1920x1080/8/71/fireman-fire-man.jpg"
 
 # title
-st.title("Demo_Google_Log")
+#st.title("Google Login App")
 
-st.image(IMAGE_ADDRESS)
+#st.image(IMAGE_ADDRESS)
 #if not st.experimental_user.is_logged_in:
 
 if not st.user.is_logged_in:
+    st.title("Google Login App")
+    st.image(IMAGE_ADDRESS)
     if st.sidebar.button("Log in with Google", type="primary", icon=":material/login:"):
         st.login()
 
