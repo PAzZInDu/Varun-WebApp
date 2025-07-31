@@ -22,3 +22,5 @@ else:
         st.logout()
     #chat()
 
+    run_app()
+
